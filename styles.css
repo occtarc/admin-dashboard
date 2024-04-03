@@ -1,0 +1,386 @@
+/* ----- Reset ----- */
+
+:root{
+    --main-color: #0c4a6e;
+    --second-color: #f0f9ff;
+    --bg-color: #93c5fd;
+    --shadow-color: rgba(0,0,0,0.4);
+}
+html{
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+*,
+::after,
+::before{
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Lato", sans-serif;
+    background-color:var(--bg-color);
+}
+
+p,h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+
+svg{
+    width: 20px;
+    height: 20px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+/* ----- Body Grid ----- */
+
+body{
+    display: grid;
+    grid-template-columns: 230px 1fr;
+    grid-template-rows: 200px 1fr;
+}
+
+/* ----- Nav Bar ----- */
+.nav-bar{
+    padding: 1.3rem;
+    grid-area: 1/1/3/2;
+    background-color: var(--main-color);
+    color: var(--second-color);
+}
+
+
+.nav-bar svg{
+    fill: var(--second-color);
+}
+
+/* ----- Nav Bar Title ----- */
+
+.nav-bar .title{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title h1{
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+
+.title svg{
+    width: 70px;
+    height: 70px;
+}
+
+/* ----- Nav Bar Ul y Li ----- */
+
+.nav-bar .admin-options{
+    margin-bottom: 50px;
+}
+
+.nav-bar li{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    height: 50px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.nav-bar li:hover{
+    background-color: var(--shadow-color);
+}
+
+.nav-bar li svg{
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+}
+
+.nav-bar li p{
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* ----- Header ----- */
+
+.header{
+    position: relative;
+    z-index: 1;
+    padding: 10px 40px;
+    grid-area: 1 / 2 / 2 / 3;
+    background-color: var(--second-color);
+    box-shadow: 2px 2px 5px var(--shadow-color);
+    display: grid;
+    grid-template-rows: 50% 1fr;
+    row-gap: 5px;
+}
+
+/* ----- Header Section Top ----- */
+
+.header .section-top{
+    grid-row: 1 / 2;
+    display: grid;
+    grid-template-columns: 72% 1fr;
+    align-items: center;
+}
+
+.section-top svg{
+    width: 25px;
+    height: 25px;
+}
+
+/* ----- Section Top Form ----- */
+
+.section-top form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+.section-top form input{
+    width: 75%;
+    height: 35px;
+    padding: 10px;
+    margin-left: 15px;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background-color: #bae6fd;
+}
+
+/* ----- Section Top Info User ----- */
+
+.info-user{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.info-user img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.info-user p{
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* ----- Header Section Bottom ----- */
+
+.header .section-bottom{
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 65% 1fr;
+}
+
+/* ----- Section Bottom User Greeting ----- */
+
+.section-bottom .user-greeting{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.user-greeting img{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.user-greeting p:first-child{
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.user-greeting p:last-child{
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+/* ----- Section Bottom Buttons ----- */
+
+.section-bottom .buttons-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons-container button{
+    display: inline-block;
+    margin-right: 5px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--second-color);
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+
+.buttons-container button:hover{
+    background-color: rgba(8, 47, 73, 0.9);
+}
+
+/* ----- Principal Container ----- */
+
+.principal-container{
+    display: grid;
+    grid-template-columns: 75% minmax(220px, 1fr);
+    padding: 20px;
+    gap: 20px;
+    background-color: rgb(213, 233, 243)
+}
+
+.principal-container h2{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* ----- Principal Container Container-Cards ----- */
+
+.principal-container .container-cards{
+    grid-column: 1/2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 20px;
+}
+
+/* -----  Container-Cards   Cards ----- */
+
+.container-cards .card{
+    position: relative;
+    min-height: 190px;
+    padding: 20px;
+    background-color: var(--second-color);
+    border-left: 6px solid var(--main-color);
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px var(--shadow-color);
+}
+
+.card h3{
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.card p{
+    color: rgba(0,0,0,0.6);
+    font-size: 0.9rem;
+}
+
+.card .buttons-card{
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+}
+
+.card .buttons-card svg{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.buttons-card svg:nth-child(1),
+.buttons-card svg:nth-child(2){
+    margin-right: 10px;
+}
+
+.card .buttons-card svg:hover{
+    background-color: rgba(0,0,0,.1);
+}
+
+/* ----- Principal Container Announcements ----- */
+
+.announcements h2{
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.announcements .ad-card{
+    padding: 20px;
+    background-color: var(--second-color);
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px var(--shadow-color);
+}
+
+.announcements .ad-card hr{
+    border: 0;
+    height: 1px;
+    margin-block: 20px;
+    background-color: rgba(0,0,0,.1)
+}
+
+
+.announcements .ad-card div h5{
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.announcements .ad-card div p{
+    color: rgba(0,0,0,0.6);
+    font-size: 0.8rem;
+}
+
+/* ----- Principal Container Trendings ----- */
+
+.principal-container .trendings{
+    grid-column: 2 / 3;
+}
+
+.principal-container .trendings h2{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.trendings .trendings-cards{
+    padding: 20px;
+    background-color: var(--second-color);
+    border-radius: 7px;
+    box-shadow: 2px 2px 5px var(--shadow-color);
+}
+
+.trendings-cards hr{
+    border: 0;
+    height: 1px;
+    margin-block: 10px;
+    background-color: rgba(0,0,0,.1)
+}
+.trendings-cards .trending-card{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.trending-card img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.trending-card p:last-child{
+    color: rgba(0,0,0,0.6);
+    font-size: 0.8rem;
+    margin-top: 3px;
+}
